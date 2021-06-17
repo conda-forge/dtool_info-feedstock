@@ -13,7 +13,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   preserve_egg_dir: True
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
@@ -48,6 +48,9 @@ test:
     - dtool overlay --help
     - dtool inventory --help
     - dtool uuid --help
+    - pip check
+  requires:
+    - pip
 
 about:
   home: http://github.com/{{ author }}/{{ reponame }}
@@ -60,3 +63,4 @@ about:
 extra:
   recipe-maintainers:
     - pvanheus
+    - jan-janssen
