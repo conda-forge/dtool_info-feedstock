@@ -1,22 +1,18 @@
 {% set name = "dtool_info" %}
-{% set reponame = "dtool-info" %}
-{% set author = "jic-dtool" %}
 {% set version = "0.16.1" %}
-{% set sha256 = "4546b4065229804be1b7aed2cbc4f609ca14407faaba8fe8a61dda7113f5521e" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/{{ author }}/{{ reponame }}/archive/{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/dtool-info/dtool-info-{{ version }}.tar.gz
+  sha256: "4546b4065229804be1b7aed2cbc4f609ca14407faaba8fe8a61dda7113f5521e"
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  preserve_egg_dir: True
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -53,12 +49,12 @@ test:
     - pip
 
 about:
-  home: http://github.com/{{ author }}/{{ reponame }}
+  home: https://github.com/jic-dtool/dtool-info
   license: MIT
   license_file: LICENSE.rst
   summary: 'dtool CLI commands for getting information about datasets'
-
-  dev_url: https://github.com/{{ author }}/{{ reponame }}
+  doc_url: https://github.com/jic-dtool/dtool-info
+  dev_url: https://github.com/jic-dtool/dtool-info
 
 extra:
   recipe-maintainers:
