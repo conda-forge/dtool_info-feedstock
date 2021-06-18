@@ -1,7 +1,7 @@
 About dtool_info
 ================
 
-Home: http://github.com/jic-dtool/dtool-info
+Home: https://github.com/jic-dtool/dtool-info
 
 Package license: MIT
 
@@ -10,6 +10,8 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dtool_info-feed
 Summary: dtool CLI commands for getting information about datasets
 
 Development: https://github.com/jic-dtool/dtool-info
+
+Documentation: https://github.com/jic-dtool/dtool-info
 
 Current build status
 ====================
