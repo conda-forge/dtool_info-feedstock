@@ -1,5 +1,5 @@
 {% set name = "dtool_info" %}
-{% set version = "0.16.1" %}
+{% set version = "0.16.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/dtool-info/dtool-info-{{ version }}.tar.gz
-  sha256: "109b03327cd120063e7a0d54bfd0c3852ac7551e82c5167c0167e45fbbc76845"
+  sha256: 06e062f4fb0d011d4be1dbd1c5785db6f6d01cecce2e547e34ef4bf6bbd9474c
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -52,7 +52,7 @@ about:
   home: https://github.com/jic-dtool/dtool-info
   license: MIT
   license_file: LICENSE.rst
-  summary: 'dtool CLI commands for getting information about datasets'
+  summary: dtool CLI commands for getting information about datasets
   doc_url: https://github.com/jic-dtool/dtool-info
   dev_url: https://github.com/jic-dtool/dtool-info
 
