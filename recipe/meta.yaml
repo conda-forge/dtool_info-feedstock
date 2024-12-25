@@ -6,20 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/dtool-info/dtool-info-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/dtool-info/dtool-info-{{ version }}.tar.gz
   sha256: 06e062f4fb0d011d4be1dbd1c5785db6f6d01cecce2e547e34ef4bf6bbd9474c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - click
     - setuptools
     - dtoolcore
@@ -47,6 +48,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/jic-dtool/dtool-info
