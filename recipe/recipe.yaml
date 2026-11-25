@@ -2,18 +2,18 @@ schema_version: 1
 
 context:
   name: dtool_info
-  version: 0.16.2
+  version: "0.16.3"
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/dtool-info/dtool-info-${{ version }}.tar.gz
-  sha256: 06e062f4fb0d011d4be1dbd1c5785db6f6d01cecce2e547e34ef4bf6bbd9474c
+  url: https://pypi.org/packages/source/${{ name[0] }}/dtool-info/${{ name }}-${{ version }}.tar.gz
+  sha256: 81eb3016754b7ae19998ad5c4193d5a096f1500f25a0a38e5ad98525cec62a37
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -21,7 +21,8 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools
+    - hatchling
+    - hatch-vcs
   run:
     - python >=${{ python_min }}
     - click
